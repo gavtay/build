@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #AAAAAA;
+    background-color: #fff;
     font-family: "Roboto_Mono", monospace;
 }
 
@@ -20,6 +20,9 @@ body {
 }
 #buttons {
     margin: 0px 25px 0px 0px;
+}
+.nav-link {
+    color: #000;
 }
 
 .section-one {
