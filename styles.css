@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    height: 50px;
+    height: 60px;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
@@ -16,10 +16,29 @@ body {
     border-bottom: 2px solid #000000;
 }
 #header-logo {
-    margin: 0px 0px 0px 25px;
+    /* margin: 0px 0px 0px 200px; */
+    margin-left: 25%;
 }
-#buttons {
-    margin: 0px 25px 0px 0px;
+#nav-buttons {
+    /* margin: 0px 200px 0px 0px; */
+    margin-right: 25%;
+}
+img {
+    height: 35px;
+}
+#settings-button {
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+#settings-button:hover {
+    border-bottom: 2px solid #9f81cd;
+}
+#profile-button {
+    background-color: transparent;
+    border: 2px solid transparent
+}
+#profile-button:hover {
+    border-bottom: 2px solid #f198af;
 }
 .nav-link {
     color: #000;
