@@ -1,50 +1,63 @@
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('path-to-font/VictorMono-Regular.ttf') format('truetype');
+}
 * {
     margin: 0;
-}
-@font-face {
-    font-family: 'Roboto Mono';
-    src: url('path-to-font/RobotoMono-Regular.ttf') format('truetype');
+    font-family: 'Roboto Mono', monospace;
 }
 
 body {
     background-color: #ececec;
     font-family: "Roboto_Mono", monospace;
 }
+
+.head-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 header {
     height: 60px;
-    background-color: #fff;
+    width: 55%;
     display: flex;
+    /* allows for wrapping when screen is narrow */
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #000000;
+    padding: 0 15px;
+    /* border-bottom: 2px solid #000000; */
 }
 #header-logo {
-    margin-left: 25%;
     border-bottom: 2px solid #766dc1;
 }
-#nav-buttons {
-    margin-right: 25%;
-}
 img {
-    height: 35px;
+    height: 30px;
 }
-#settings-button {
+.container {
+    display: flex;
+}
+.nav-button {
+    font-size: medium;
     background-color: transparent;
     border: 2px solid transparent;
+    display: flex;
+    align-items: center;
 }
-#settings-button:hover {
-    border-bottom: 2px solid #f198af;
-}
-#profile-button {
-    background-color: transparent;
-    border: 2px solid transparent
-}
-#profile-button:hover { 
-    border-bottom: 2px solid #9f81cd;
+.nav-button:hover {
+    border-bottom: 2px solid #766dc1;
 }
 .nav-link {
     color: #000;
 }
+/* Responsiveness for header */
+@media screen and (max-width: 768px) {
+    #header-logo {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
 
 /* main {
 } */
@@ -61,6 +74,13 @@ img {
     flex-direction: column;
     align-items: center;
 }
+/* This adds responsiveness to main */
+@media screen and (max-width: 768px) {
+    .section-one {
+        top: 40%;
+    }
+}
+
 .timer-box {
     height: 160px;
     width: 100%;
@@ -72,20 +92,21 @@ img {
     align-items: center;
 }
 .timer {
-    font-size: xx-large;
+    font-size: 3rem;
     font-weight: bolder;
 }
 .play-button-box {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .play-pause-button {
     height: 35px;
     width: 150px;
-    font-size: xx-large;
+    font-size: 2rem;
     background-color: #ececec;
     border: 2px solid transparent;
 }
 .play-pause-button:hover {
-    border-top: 2px solid #000;
+    border-top: 2px solid #766dc1;
     transition-duration: 0.5s;
 }
+
