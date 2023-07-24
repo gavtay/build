@@ -1,15 +1,14 @@
 @font-face {
-    font-family: 'Victor Mono';
-    src: url('path-to-font/VictorMono-Regular.ttf') format('truetype');
+    font-family: 'Montserrat';
+    src: url('path-to-font/Montserrat-Regular.ttf') format('truetype');
 }
 * {
     margin: 0;
-    font-family: 'Roboto Mono', monospace;
 }
 
 body {
     background-color: #ececec;
-    font-family: "Roboto_Mono", monospace;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .head-banner {
@@ -29,6 +28,7 @@ header {
     /* border-bottom: 2px solid #000000; */
 }
 #header-logo {
+    font-weight: 400;
     border-bottom: 2px solid #766dc1;
 }
 img {
@@ -38,6 +38,7 @@ img {
     display: flex;
 }
 .nav-button {
+    font-family: 'Montserrat';
     font-size: medium;
     background-color: transparent;
     border: 2px solid transparent;
@@ -46,6 +47,7 @@ img {
 }
 .nav-button:hover {
     border-bottom: 2px solid #766dc1;
+    transition-duration: .5s;
 }
 .nav-link {
     color: #000;
@@ -56,6 +58,11 @@ img {
         margin-left: 0;
         text-align: center;
     }
+    .nav-button {
+        font-size: 0;
+        color: transparent;
+        padding: 5px;
+    }
 }
 
 
@@ -64,7 +71,7 @@ img {
 .section-one {
     position: absolute;
     /* This centers the box */
-    top: 35%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 350px;
@@ -74,10 +81,15 @@ img {
     flex-direction: column;
     align-items: center;
 }
-/* This adds responsiveness to main */
+/* This adds responsiveness to timer box */
 @media screen and (max-width: 768px) {
     .section-one {
-        top: 40%;
+        width: 80%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .section-one {
+        width: 70%;
     }
 }
 
@@ -101,6 +113,7 @@ img {
 .play-pause-button {
     height: 35px;
     width: 150px;
+    font-family: 'Montserrat';
     font-size: 2rem;
     background-color: #ececec;
     border: 2px solid transparent;
