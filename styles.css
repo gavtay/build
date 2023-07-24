@@ -1,26 +1,28 @@
 * {
     margin: 0;
 }
-
-body {
-    background-color: #fff;
-    font-family: "Roboto_Mono", monospace;
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('path-to-font/RobotoMono-Regular.ttf') format('truetype');
 }
 
-.container {
+body {
+    background-color: #ececec;
+    font-family: "Roboto_Mono", monospace;
+}
+header {
     height: 60px;
-    background-color: transparent;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #000000;
 }
 #header-logo {
-    /* margin: 0px 0px 0px 200px; */
     margin-left: 25%;
+    border-bottom: 2px solid #766dc1;
 }
 #nav-buttons {
-    /* margin: 0px 200px 0px 0px; */
     margin-right: 25%;
 }
 img {
@@ -31,20 +33,59 @@ img {
     border: 2px solid transparent;
 }
 #settings-button:hover {
-    border-bottom: 2px solid #9f81cd;
+    border-bottom: 2px solid #f198af;
 }
 #profile-button {
     background-color: transparent;
     border: 2px solid transparent
 }
-#profile-button:hover {
-    border-bottom: 2px solid #f198af;
+#profile-button:hover { 
+    border-bottom: 2px solid #9f81cd;
 }
 .nav-link {
     color: #000;
 }
 
+/* main {
+} */
 .section-one {
-    background-color: aqua;
+    position: absolute;
+    /* This centers the box */
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 350px;
+    width: 450px;
+    display: flex;
+    /* This puts them on top of eachother */
+    flex-direction: column;
+    align-items: center;
 }
-
+.timer-box {
+    height: 160px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+.play-button-box {
+    margin-top: 100px;
+}
+.play-pause-button {
+    height: 35px;
+    width: 150px;
+    font-size: xx-large;
+    background-color: #ececec;
+    border: 2px solid transparent;
+}
+.play-pause-button:hover {
+    border-top: 2px solid #000;
+    transition-duration: 0.5s;
+}
