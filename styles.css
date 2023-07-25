@@ -110,7 +110,7 @@ img {
 .play-button-box {
     margin-top: 50px;
 }
-.play-pause-button {
+.start-stop-button {
     height: 35px;
     width: 150px;
     font-family: 'Montserrat';
@@ -118,7 +118,7 @@ img {
     background-color: #ececec;
     border: 2px solid transparent;
 }
-.play-pause-button:hover {
+.start-stop-button:hover {
     border-top: 2px solid #766dc1;
     transition-duration: 0.5s;
 }
