@@ -103,7 +103,7 @@ img {
     justify-content: center;
     align-items: center;
 }
-.timer {
+#timer {
     font-size: 3rem;
     font-weight: bolder;
 }
@@ -122,4 +122,15 @@ img {
     border-top: 2px solid #766dc1;
     transition-duration: 0.5s;
 }
-
+.reset-button {
+    height: 35px;
+    width: 150px;
+    font-family: 'Montserrat';
+    font-size: 2rem;
+    background-color: #ececec;
+    border: 2px solid transparent;
+}
+.reset-button:hover {
+    border-top: 2px solid #766dc1;
+    transition-duration: 0.5s;
+}
