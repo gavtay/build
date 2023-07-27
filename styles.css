@@ -49,6 +49,45 @@ img {
     border-bottom: 2px solid #766dc1;
     transition-duration: .5s;
 }
+/* Settings side-bar popup */
+.settings-bar {
+    background-color: #d2d2d2;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100vh;
+    z-index: 10;
+    transform: translateX(100%);
+    transition: all 0.3s linear;
+    overflow: scroll;
+}
+.settings-bar .settings {
+    padding: 0;
+}
+.settings .close-settings {
+    font-size: 1.3em;
+    padding: 1em;
+    cursor: pointer;
+}
+.fa-times {
+    margin-top: 0.5em;
+}
+settings h2{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1em;
+    font-size: 1.1em;
+}
+/* .settings-hours {
+
+}
+.settings-minutes {
+
+} */
+.settings-bar.show-settings {
+    transform: translateX(0);
+}
 .nav-link {
     color: #000;
 }
@@ -64,6 +103,10 @@ img {
         padding: 5px;
     }
 }
+
+
+
+
 
 
 /* main {

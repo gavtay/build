@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link css style sheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../study-buddy/styles.css">
     <link rel="stylesheet" href="../study-buddy/timer.js">
+    <script src="../study-buddy/settings.js"></script>
     <title>Stubu - The Study Buddy</title>
 </head>
 
@@ -16,13 +18,28 @@
             <h1 id="header-logo">Stubu</h1>
             <!-- Nav for navigation (buttons to navigate) -->
             <div class="container">
-                <button class="nav-button"><img src="../study-buddy/images/settings.png" alt="Settings cog wheel">Settings</button>
-                <button class="nav-button"><img src="../study-buddy/images/profile.png" alt="profile silhouette">Profile</button>
+                <button id="settings-button" class="nav-button"><img src="../study-buddy/images/settings.png" alt="Settings cog wheel">Settings</button>
+                <button id="profile-button" class="nav-button"><img src="../study-buddy/images/profile.png" alt="profile silhouette">Profile</button>
             </div>
         </header>
     </div>
 
-    <!-- main to signify it is the main content section of page -->
+    <!-- Settings bar popup -->
+    <div class="settings-bar">
+        <div class="settings">
+            <span class="close-settings">
+                <i class="fa fa-times"></i>
+            </span>
+            <h2>Settings</h2>
+            <div class="settings-content"></div>
+            <p>Hours: </p>
+            <input type="number" class="settings-hours">
+            <p>Minutes: </p>
+            <input type="number" class="settings-minutes">
+        </div>
+    </div>
+
+    <!-- Timer and main buttons -->
     <main>
         <section class="section-one">
             <div class="timer-box">
@@ -34,6 +51,6 @@
             </div>
         </section>
     </main>
-
 </body>
+
 </html>
