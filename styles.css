@@ -44,11 +44,13 @@ img {
     border: 2px solid transparent;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .nav-button:hover {
     border-bottom: 2px solid #766dc1;
     transition-duration: .5s;
 }
+
 /* Settings side-bar popup */
 .settings-bar {
     background-color: #d2d2d2;
@@ -73,21 +75,57 @@ img {
 .fa-times {
     margin-top: 0.5em;
 }
-settings h2{
+.settings-container {
+    display: flex;
+    justify-content: center;
+}
+.settings-titlebox {
+    width: 110px;
+    align-items: center;
+}
+.settings-title {
+    font-family: 'Montserrat';
+    font-weight: 500;
     text-align: center;
     width: 100%;
     margin-bottom: 1em;
-    font-size: 1.1em;
+    border-bottom: 2px solid #766dc1;
 }
-/* .settings-hours {
-
+.settings-inputs {
+    margin: 15px;
+}
+.settings-hours {
+    border: 1px solid #000;
+    border-radius: 5px;
 }
 .settings-minutes {
-
-} */
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.settings-seconds {
+    border: 1px solid #000;
+    border-radius: 5px;
+}
 .settings-bar.show-settings {
     transform: translateX(0);
 }
+.save-container {
+    display: flex;
+    justify-content: center;
+}
+.save-btn {
+    font-family: 'Montserrat';
+    font-size: larger;
+    font-weight: 500;
+    background-color: #d2d2d2;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.save-btn:hover {
+    border-bottom: 2px solid #766dc1;
+    transition: 0.5s;
+}
+
 .nav-link {
     color: #000;
 }
@@ -160,6 +198,7 @@ settings h2{
     font-size: 2rem;
     background-color: #ececec;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 .start-stop-button:hover {
     border-top: 2px solid #766dc1;
@@ -172,6 +211,7 @@ settings h2{
     font-size: 2rem;
     background-color: #ececec;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 .reset-button:hover {
     border-top: 2px solid #766dc1;

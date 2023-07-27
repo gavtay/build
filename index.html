@@ -27,15 +27,26 @@
     <!-- Settings bar popup -->
     <div class="settings-bar">
         <div class="settings">
-            <span class="close-settings">
+            <span id="close-settings-button" class="close-settings">
                 <i class="fa fa-times"></i>
             </span>
-            <h2>Settings</h2>
+            <div class="settings-container">
+                <div class="settings-titlebox">
+                    <h2 class="settings-title">Settings</h2>
+                </div>
+            </div>
             <div class="settings-content"></div>
-            <p>Hours: </p>
-            <input type="number" class="settings-hours">
-            <p>Minutes: </p>
-            <input type="number" class="settings-minutes">
+            <div class="settings-inputs">
+                <p>Hours: </p>
+                <input type="number" class="settings-hours">
+                <p>Minutes: </p>
+                <input type="number" class="settings-minutes">
+                <p>Seconds: </p>
+                <input type="number" class="settings-seconds">
+            </div>
+            <div class="save-container">
+                <button class="save-btn">SAVE</button>
+            </div>
         </div>
     </div>
 
