@@ -126,12 +126,6 @@ img {
     transition: 0.5s;
 }
 
-
-
-
-
-
-
 /* Settings side-bar popup */
 .profile-bar {
     background-color: #d2d2d2;
@@ -200,11 +194,16 @@ img {
 }
 
 
-
-
-
-
-
+/* settings popup */
+.settingsPopup {
+    height: 400px;
+    width: 250px;
+    background-color: aquamarine;
+    display: none;
+}
+.settingsPopup.show-settings {
+    display: block;
+}
 
 
 .nav-link {

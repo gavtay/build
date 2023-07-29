@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link css style sheet -->
+    <!-- icons link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../study-buddy/styles.css">
-    <link rel="stylesheet" href="../study-buddy/timer.js">
     <script src="../study-buddy/profile.js"></script>
+    <script src="../study-buddy/settings.js"></script>
     <title>Stubu - The Study Buddy</title>
 </head>
 
@@ -18,39 +18,18 @@
             <h1 id="header-logo">Stubu</h1>
             <!-- Nav for navigation (buttons to navigate) -->
             <div class="container">
-                <button id="settings-button" class="nav-button"><img src="../study-buddy/images/settings.png" alt="Settings cog wheel">Settings</button>
+                <button id="settings-button" class="nav-button" onclick="settingsPop()"><img src="../study-buddy/images/settings.png" alt="Settings cog wheel">Settings</button>
                 <button id="profile-button" class="nav-button"><img src="../study-buddy/images/profile.png" alt="profile silhouette">Profile</button>
             </div>
         </header>
     </div>
 
-    <!-- Settings bar popup
-    <div class="settings-bar">
-        <div class="settings">
-            <span id="close-settings-button" class="close-settings">
-                <i class="fa fa-times"></i>
-            </span>
-            <div class="settings-container">
-                <div class="settings-titlebox">
-                    <h2 class="settings-title">Settings</h2>
-                </div>
-            </div>
-            <div class="settings-content"></div>
-            <div class="settings-inputs">
-                <p>Hours: </p>
-                <input type="number" class="settings-hours">
-                <p>Minutes: </p>
-                <input type="number" class="settings-minutes">
-                <p>Seconds: </p>
-                <input type="number" class="settings-seconds">
-            </div>
-            <div class="save-container">
-                <button class="save-btn">SAVE</button>
-            </div>
-        </div>
-    </div> -->
+    <!-- Settings menu popup -->
+    <div class="settingsPopup">
+        <p>Hi.</p>
+    </div>
 
-    <!-- Profile bar popup -->
+    <!-- Profile bar slider -->
     <div class="profile-bar">
         <div class="profile">
             <span id="close-profile-button" class="close-profile">
