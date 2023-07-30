@@ -126,6 +126,43 @@ img {
     transition: 0.5s;
 }
 
+/* settings popup */
+.settingsPopup {
+    display: flex;
+    justify-content: center;
+}
+.settings {
+    height: 400px;
+    width: 30%;
+    background-color: #d2d2d2;
+    border: 2px solid #000;
+    border-radius: 10px;
+    z-index: 10;
+    display: none;
+}
+.settings.show-settings {
+    display: block;
+}
+.save-timer-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+.save-timer-btn {
+    height: 35px;
+    width: 75px;
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: #d2d2d2;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.save-timer-btn:hover {
+    border-bottom: 2px solid #766dc1;
+    transition: .5s;
+}
+
 /* Settings side-bar popup */
 .profile-bar {
     background-color: #d2d2d2;
@@ -134,6 +171,7 @@ img {
     top: 0;
     width: 40%;
     height: 100vh;
+    border-left: 2px solid #000;
     z-index: 10;
     transform: translateX(100%);
     transition: all 0.3s linear;
@@ -192,19 +230,6 @@ img {
     border-bottom: 2px solid #766dc1;
     transition: 0.5s;
 }
-
-
-/* settings popup */
-.settingsPopup {
-    height: 400px;
-    width: 250px;
-    background-color: aquamarine;
-    display: none;
-}
-.settingsPopup.show-settings {
-    display: block;
-}
-
 
 .nav-link {
     color: #000;

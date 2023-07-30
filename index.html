@@ -25,8 +25,33 @@
     </div>
 
     <!-- Settings menu popup -->
+    <!-- Add a slider button for water and posture reminder with input -->
     <div class="settingsPopup">
-        <p>Hi.</p>
+        <div class="settings">
+            <span id="close-settings-button" class="close-settings">
+                <i class="fa fa-times"></i>
+            </span>
+            <div class="settings-container">
+                <div class="settings-titlebox">
+                    <h2 class="settings-title">Settings</h2>
+                </div>
+            </div>
+            <div class="settings-content"></div>
+            <div class="settings-inputs">
+                <p>Hours: </p>
+                <input type="number" class="settings-hr"
+                min="0" max="23" value="0">
+                <p>Minutes: </p>
+                <input type="number" class="settings-min"
+                min="0" max="59" value="30">
+                <p>Seconds: </p>
+                <input type="number" class="settings-sec"
+                min="0" max="59" value="0">
+            </div>
+            <div class="save-timer-container">
+                <button class="save-timer-btn">Save</button>
+            </div>
+        </div>
     </div>
 
     <!-- Profile bar slider -->
