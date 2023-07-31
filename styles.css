@@ -310,7 +310,7 @@ img {
 .play-button-box {
     margin-top: 50px;
 }
-.start-stop-button {
+#start-stop-button {
     height: 35px;
     width: 150px;
     font-family: 'Montserrat';
@@ -319,7 +319,7 @@ img {
     border: 2px solid transparent;
     cursor: pointer;
 }
-.start-stop-button:hover {
+#start-stop-button:hover {
     border-top: 2px solid #766dc1;
     transition-duration: 0.5s;
 }
