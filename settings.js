@@ -1,3 +1,11 @@
+// settings.js
+// global variable for timer display
+const timerDisplay = {
+    hrDisplay: document.getElementById('hr-display'),
+    minDisplay: document.getElementById('min-display'),
+    secDisplay: document.getElementById('sec-display'),
+};
+
 // opens the settings menu
 document.addEventListener("DOMContentLoaded", function() {
     const settingsButton = document.getElementById("settings-button");
