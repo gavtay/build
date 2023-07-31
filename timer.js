@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // if the timer is not running and the START button is
             // pressed then change text content to STOP since timer
             // was started
-            console.log('Get ready')
             intervalId = setInterval(updateTimer, 1000);
             startStopStatus.textContent = 'STOP';
         } 
@@ -32,9 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    // timer logic here to decrement current time
+    // Decrement time function
     function updateTimer() {
-        console.log('In updateTimer function')
         const hrDisplayValue = document.getElementById('hr-display');
         const minDisplayValue = document.getElementById('min-display');
         const secDisplayValue = document.getElementById('sec-display');
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
             startStopStatus.textContent = 'START';
             isRunning = false;
             alert('Timer has ended!');
-            console.log('Checked if timer is at 0');
         } 
         else { 
             // else decrement timer
@@ -77,6 +74,32 @@ document.addEventListener('DOMContentLoaded', function() {
         hrDisplayValue.textContent = formattedHours;
         minDisplayValue.textContent = formattedMinutes;
         secDisplayValue.textContent = formattedSeconds;
+    }
+
+
+
+    // Reset timer, call the function when reset button is clicked
+    const resetTimer = document.getElementById('reset-button');
+    resetTimer.addEventListener('click', resetButton);
+
+    function resetButton() {
+        // grab the inputs in settings and id's of clock
+        const setHr = document.getElementById('set-hr');
+        const setMin = document.getElementById('set-min');
+        const setSec = document.getElementById('set-sec');
+        const hrDisplayVal = document.getElementById('hr-display');
+        const minDisplayVal = document.getElementById('min-display');
+        const secDisplayVal = document.getElementById('sec-display');
+
+        // get value of each input or set to '00'
+        const formattedHrs = setHr.value || '00';
+        const formattedMin = setMin.value || '00';
+        const formattedSec = setSec.value || '00';
+
+        // Reset timer to inputted time with proper pad formatting
+        hrDisplayVal.textContent = formattedHrs.padStart(2, '0');
+        minDisplayVal.textContent = formattedMin.padStart(2, '0');
+        secDisplayVal.textContent = formattedSec.padStart(2, '0');
     }
 
 });
