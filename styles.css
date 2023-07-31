@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
     font-family: 'Montserrat';
     src: url('path-to-font/Montserrat-Regular.ttf') format('truetype');
-}
+} */
 * {
     margin: 0;
 }
@@ -307,6 +307,9 @@ img {
     justify-content: center;
     align-items: center;
 }
+#hr-display {
+    initial-value: '00';
+}
 .play-button-box {
     margin-top: 50px;
 }
@@ -323,7 +326,7 @@ img {
     border-top: 2px solid #766dc1;
     transition-duration: 0.5s;
 }
-.reset-button {
+#reset-button {
     height: 35px;
     width: 150px;
     font-family: 'Montserrat';
@@ -332,7 +335,7 @@ img {
     border: 2px solid transparent;
     cursor: pointer;
 }
-.reset-button:hover {
+#reset-button:hover {
     border-top: 2px solid #766dc1;
     transition-duration: 0.5s;
 }
