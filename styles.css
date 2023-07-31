@@ -159,7 +159,7 @@ img {
     display: flex;
     justify-content: center;
 }
-.save-timer-btn {
+#save-timer-btn {
     height: 35px;
     width: 65px;
     font-family: 'Montserrat';
@@ -169,10 +169,13 @@ img {
     border: 2px solid transparent;
     cursor: pointer;
 }
-.save-timer-btn:hover {
+#save-timer-btn:hover {
     border-bottom: 2px solid #766dc1;
     transition: .5s;
 }
+
+
+
 
 /* Profile side-bar popup */
 .profile-bar {
