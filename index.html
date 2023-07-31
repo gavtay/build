@@ -45,7 +45,7 @@
                     
                     <p style="margin-top: 10px;">Minutes: </p>
                     <input type="number" class="settings-input" id="set-min"
-                    min="0" max="59" value="30">
+                    min="0" max="59" value="0">
                     
                     <p style="margin-top: 10px;">Seconds: </p>
                     <input type="number" class="settings-input" id="set-sec"
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="save-timer-container">
-                <button class="save-timer-btn">Save</button>
+                <button id="save-timer-btn">Save</button>
             </div>
         </div>
     </div>
@@ -86,7 +86,9 @@
     <main>
         <section class="section-one">
             <div class="timer-box">
-                <span id="timer">00:00:00</span>
+                <span id="hr-display">00</span>:
+                <span id="min-display">00</span>:
+                <span id="sec-display">00</span>
             </div>
             <div class="play-button-box">
                 <!-- Create JS file to change the text from start -->

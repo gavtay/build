@@ -16,12 +16,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // When a time change is made in the settings menu
 // And save is pressed, push the time change to the main screen
+document.addEventListener('DOMContentLoaded', () => {
+    const hrInput = document.getElementById("set-hr");
+    const minInput = document.getElementById("set-min");
+    const secInput = document.getElementById("set-sec");
 
-document.addEventListener("DOMContentLoaded", function() {
-    const saveTimer = document.getElementsByClassName("save-timer-btn");
-    var hourValue;
-    var minValue;
-    var secValue;
+    const hrDisplay = document.getElementById("hr-display");
+    const minDisplay = document.getElementById("min-display");
+    const secDisplay = document.getElementById("sec-display");
 
+    const saveTimerBtn = document.getElementById("save-timer-btn");
+    saveTimerBtn.addEventListener('click', updateClock);
+
+    function updateClock() {
+        const hrs = hrInput.value || 0;
+        const min = minInput.value || 0;
+        const sec = secInput.value || 0;
+
+        const formattedHrs = hrs.toString().padStart(2, '0');
+        const formattedMin = min.toString().padStart(2, '0');
+        const formattedSec = sec.toString().padStart(2, '0');
+
+        hrDisplay.textContent = formattedHrs;
+        minDisplay.textContent = formattedMin;
+        secDisplay.textContent = formattedSec;
+    }
+
+    updateClock();
+    
 });
+
 
