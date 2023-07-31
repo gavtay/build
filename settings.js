@@ -13,3 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+
+// When a time change is made in the settings menu
+// And save is pressed, push the time change to the main screen
+
+document.addEventListener("DOMContentLoaded", function() {
+    const saveTimer = document.getElementsByClassName("save-timer-btn");
+    var hourValue;
+    var minValue;
+    var secValue;
+
+});
+

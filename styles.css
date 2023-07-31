@@ -142,7 +142,7 @@ img {
     display: none;
 }
 .settings.show-settings {
-    display: block;
+    display: block;  
 }
 .settings-titlebox {
     margin-top: 15px;
