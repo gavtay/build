@@ -37,16 +37,20 @@
                 </div>
             </div>
             <div class="settings-content"></div>
-            <div class="settings-inputs">
-                <p>Hours: </p>
-                <input type="number" class="settings-hr"
-                min="0" max="23" value="0">
-                <p>Minutes: </p>
-                <input type="number" class="settings-min"
-                min="0" max="59" value="30">
-                <p>Seconds: </p>
-                <input type="number" class="settings-sec"
-                min="0" max="59" value="0">
+            <div class="input-container">
+                <div class="settings-inputs">
+                    <p>Hours: </p>
+                    <input type="number" class="settings-input" id="set-hr"
+                    min="0" max="23" value="0">
+                    
+                    <p style="margin-top: 10px;">Minutes: </p>
+                    <input type="number" class="settings-input" id="set-min"
+                    min="0" max="59" value="30">
+                    
+                    <p style="margin-top: 10px;">Seconds: </p>
+                    <input type="number" class="settings-input" id="set-sec"
+                    min="0" max="59" value="0">
+                </div>
             </div>
             <div class="save-timer-container">
                 <button class="save-timer-btn">Save</button>

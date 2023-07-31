@@ -133,7 +133,8 @@ img {
 }
 .settings {
     height: 400px;
-    width: 30%;
+    width: 20%;
+    min-width: 150px;
     background-color: #d2d2d2;
     border: 2px solid #000;
     border-radius: 10px;
@@ -143,6 +144,16 @@ img {
 .settings.show-settings {
     display: block;
 }
+.settings-titlebox {
+    margin-top: 15px;
+}
+.settings-input {
+    width: 70%;
+    height: 2em;
+    margin-top: 3px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
 .save-timer-container {
     margin-top: 25px;
     display: flex;
@@ -150,9 +161,9 @@ img {
 }
 .save-timer-btn {
     height: 35px;
-    width: 75px;
+    width: 65px;
     font-family: 'Montserrat';
-    font-size: 1.5rem;
+    font-size: larger;
     font-weight: 500;
     background-color: #d2d2d2;
     border: 2px solid transparent;
@@ -163,13 +174,13 @@ img {
     transition: .5s;
 }
 
-/* Settings side-bar popup */
+/* Profile side-bar popup */
 .profile-bar {
     background-color: #d2d2d2;
     position: fixed;
     right: 0;
     top: 0;
-    width: 40%;
+    width: 20em;
     height: 100vh;
     border-left: 2px solid #000;
     z-index: 10;
@@ -218,7 +229,7 @@ img {
     display: flex;
     justify-content: center;
 }
-.profile-btn {
+.login-btn {
     font-family: 'Montserrat';
     font-size: larger;
     font-weight: 500;
@@ -226,7 +237,7 @@ img {
     border: 2px solid transparent;
     cursor: pointer;
 }
-.save-btn:hover {
+.login-btn:hover {
     border-bottom: 2px solid #766dc1;
     transition: 0.5s;
 }
@@ -262,6 +273,7 @@ img {
     transform: translate(-50%, -50%);
     height: 350px;
     width: 450px;
+    min-width: 250px;
     display: flex;
     /* This puts them on top of eachother */
     flex-direction: column;
@@ -271,6 +283,7 @@ img {
 @media screen and (max-width: 768px) {
     .section-one {
         width: 80%;
+        max-width: 450px;
     }
 }
 @media screen and (max-width: 450px) {
