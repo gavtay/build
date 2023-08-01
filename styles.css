@@ -51,14 +51,22 @@ img {
     transition-duration: .5s;
 }
 
-/* Settings side-bar popup */
+
+
+
+
+
+
+
+/* Profile side-bar popup */
 .settings-bar {
     background-color: #d2d2d2;
     position: fixed;
     right: 0;
     top: 0;
-    width: 40%;
+    width: 20em;
     height: 100vh;
+    border-left: 2px solid #000;
     z-index: 10;
     transform: translateX(100%);
     transition: all 0.3s linear;
@@ -72,6 +80,7 @@ img {
     padding: 1em;
     cursor: pointer;
 }
+/* x icon */
 .fa-times {
     margin-top: 0.5em;
 }
@@ -80,167 +89,55 @@ img {
     justify-content: center;
 }
 .settings-titlebox {
-    width: 110px;
+    width: 150px;
     align-items: center;
 }
 .settings-title {
     font-family: 'Montserrat';
+    font-size: 2em;
     font-weight: 500;
     text-align: center;
     width: 100%;
     margin-bottom: 1em;
     border-bottom: 2px solid #766dc1;
 }
-.settings-inputs {
+/* clock icon */
+.fa-clock-o {
+    margin-top: 0.5em;
+}
+#input-title {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.input-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+#hours-input #minutes-input #seconds-input {
     margin: 15px;
 }
-.settings-hours {
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-.settings-minutes {
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-.settings-seconds {
+.settings-input {
     border: 1px solid #000;
     border-radius: 5px;
 }
 .settings-bar.show-settings {
     transform: translateX(0);
 }
-.save-container {
-    display: flex;
-    justify-content: center;
-}
-.save-btn {
-    font-family: 'Montserrat';
-    font-size: larger;
-    font-weight: 500;
-    background-color: #d2d2d2;
-    border: 2px solid transparent;
-    cursor: pointer;
-}
-.save-btn:hover {
-    border-bottom: 2px solid #766dc1;
-    transition: 0.5s;
-}
-
-/* settings popup */
-.settingsPopup {
-    display: flex;
-    justify-content: center;
-}
-.settings {
-    height: 400px;
-    width: 20%;
-    min-width: 150px;
-    background-color: #d2d2d2;
-    border: 2px solid #000;
-    border-radius: 10px;
-    z-index: 10;
-    display: none;
-}
-.settings.show-settings {
-    display: block;  
-}
-.settings-titlebox {
-    margin-top: 15px;
-}
-.settings-input {
-    width: 70%;
-    height: 2em;
-    margin-top: 3px;
-    border: 1px solid #000;
-    border-radius: 5px;
-}
 .save-timer-container {
-    margin-top: 25px;
     display: flex;
     justify-content: center;
 }
 #save-timer-btn {
-    height: 35px;
-    width: 65px;
+    margin-top: 20px;
     font-family: 'Montserrat';
-    font-size: larger;
+    font-size: 1.5em;
     font-weight: 500;
     background-color: #d2d2d2;
     border: 2px solid transparent;
     cursor: pointer;
 }
 #save-timer-btn:hover {
-    border-bottom: 2px solid #766dc1;
-    transition: .5s;
-}
-
-
-
-
-/* Profile side-bar popup */
-.profile-bar {
-    background-color: #d2d2d2;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 20em;
-    height: 100vh;
-    border-left: 2px solid #000;
-    z-index: 10;
-    transform: translateX(100%);
-    transition: all 0.3s linear;
-    overflow: scroll;
-}
-.profile-bar .profile {
-    padding: 0;
-}
-.profile .close-profile {
-    font-size: 1.3em;
-    padding: 1em;
-    cursor: pointer;
-}
-.fa-times {
-    margin-top: 0.5em;
-}
-.profile-container {
-    display: flex;
-    justify-content: center;
-}
-.profile-titlebox {
-    width: 90px;
-    align-items: center;
-}
-.profile-title {
-    font-family: 'Montserrat';
-    font-weight: 500;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 1em;
-    border-bottom: 2px solid #766dc1;
-}
-.profile-inputs {
-    margin: 15px;
-}
-.profile-user .profile-pass {
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-.profile-bar.show-profile {
-    transform: translateX(0);
-}
-.login-container {
-    display: flex;
-    justify-content: center;
-}
-.login-btn {
-    font-family: 'Montserrat';
-    font-size: larger;
-    font-weight: 500;
-    background-color: #d2d2d2;
-    border: 2px solid transparent;
-    cursor: pointer;
-}
-.login-btn:hover {
     border-bottom: 2px solid #766dc1;
     transition: 0.5s;
 }
@@ -266,6 +163,8 @@ img {
 
 
 
+
+
 /* main {
 } */
 .section-one {
@@ -280,6 +179,7 @@ img {
     display: flex;
     /* This puts them on top of eachother */
     flex-direction: column;
+    flex: wrap;
     align-items: center;
 }
 /* This adds responsiveness to timer box */
@@ -289,9 +189,10 @@ img {
         max-width: 450px;
     }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 400px) {
     .section-one {
         width: 70%;
+        min-width: 310px;
     }
 }
 
