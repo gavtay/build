@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- icons link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../study-buddy/styles.css">
     <script src="../study-buddy/profile.js"></script>
@@ -19,7 +19,7 @@
         <header>
             <h1 id="header-logo">Stubu</h1>
             <!-- Nav for navigation (buttons to navigate) -->
-            <div class="container">
+            <div class="nav-container">
                 <button id="settings-button" class="nav-button"><img src="../study-buddy/images/settings.png" alt="Settings cog wheel">Settings</button>
                 <button id="login-button" class="nav-button"><img src="../study-buddy/images/profile.png" alt="person silhouette">Login</button>
             </div>
@@ -41,23 +41,37 @@
             </div>
             <div class="settings-content"></div>
             <!-- clock icon -->
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <div class="clock-container">
+                <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+            </div>
             <div class="input-container">
                 <div id="hours-input" style="margin: 10px;">
-                    <label>Hours</label>
+                    <label class="input-label">Hours</label>
                     <input type="number" class="settings-input" id="set-hr"
                     min="0" max="23" value="0">
                 </div>               
                 <div id="minutes-input" style="margin: 10px;">
-                    <label>Minutes</label>
+                    <label class="input-label">Minutes</label>
                     <input type="number" class="settings-input" id="set-min"
                     min="0" max="59" value="0">
                 </div>     
                 <div id="seconds-input" style="margin: 10px;">
-                    <label>Seconds</label>
+                    <label class="input-label">Seconds</label>
                     <input type="number" class="settings-input" id="set-sec"
                     min="0" max="59" value="0">
                 </div>
+            </div>
+            <!-- water icon -->
+            <div class="water-container">
+                <i class="fa-solid fa-bottle-water"></i>
+            </div>
+            <div>
+                <label>Water</label>
+                <button>slider</button>
+                <label>Posture</label>
+                <button>slider</button>
+                <input type="number">
+                <input type="number">
             </div>
             <div class="save-timer-container">
                 <button id="save-timer-btn">Save</button>

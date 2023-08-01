@@ -34,12 +34,13 @@ header {
 img {
     height: 30px;
 }
-.container {
+.nav-container {
     display: flex;
 }
 .nav-button {
     font-family: 'Montserrat';
-    font-size: medium;
+    font-size: 1em;
+    font-weight: 400;
     background-color: transparent;
     border: 2px solid transparent;
     display: flex;
@@ -102,8 +103,13 @@ img {
     border-bottom: 2px solid #766dc1;
 }
 /* clock icon */
-.fa-clock-o {
-    margin-top: 0.5em;
+.clock-container {
+    display: flex;
+    justify-content: center;
+}
+.fa-clock {
+    margin: 15px;
+    color: #000;
 }
 #input-title {
     font-size: 1.5em;
@@ -114,10 +120,15 @@ img {
     display: flex;
     justify-content: center;
 }
+.input-label {
+    font-size: large;
+}
 #hours-input #minutes-input #seconds-input {
     margin: 15px;
 }
 .settings-input {
+    height: 20px;
+    width: 75px;
     border: 1px solid #000;
     border-radius: 5px;
 }
