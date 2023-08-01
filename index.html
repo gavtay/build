@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- icons link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../study-buddy/styles.css">
     <script src="../study-buddy/profile.js"></script>
     <script src="../study-buddy/settings.js"></script>
@@ -20,15 +21,16 @@
             <!-- Nav for navigation (buttons to navigate) -->
             <div class="container">
                 <button id="settings-button" class="nav-button"><img src="../study-buddy/images/settings.png" alt="Settings cog wheel">Settings</button>
-                <button id="profile-button" class="nav-button"><img src="../study-buddy/images/profile.png" alt="profile silhouette">Profile</button>
+                <button id="login-button" class="nav-button"><img src="../study-buddy/images/profile.png" alt="person silhouette">Login</button>
             </div>
         </header>
     </div>
 
     <!-- Settings menu popup -->
     <!-- Add a slider button for water and posture reminder with input -->
-    <div class="settingsPopup">
+    <div class="settings-bar">
         <div class="settings">
+            <!-- x icon -->
             <span id="close-settings-button" class="close-settings">
                 <i class="fa fa-times"></i>
             </span>
@@ -38,47 +40,27 @@
                 </div>
             </div>
             <div class="settings-content"></div>
+            <!-- clock icon -->
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
             <div class="input-container">
-                <div class="settings-inputs">
-                    <p>Hours: </p>
+                <div id="hours-input" style="margin: 10px;">
+                    <label>Hours</label>
                     <input type="number" class="settings-input" id="set-hr"
                     min="0" max="23" value="0">
-                    
-                    <p style="margin-top: 10px;">Minutes: </p>
+                </div>               
+                <div id="minutes-input" style="margin: 10px;">
+                    <label>Minutes</label>
                     <input type="number" class="settings-input" id="set-min"
                     min="0" max="59" value="0">
-                    
-                    <p style="margin-top: 10px;">Seconds: </p>
+                </div>     
+                <div id="seconds-input" style="margin: 10px;">
+                    <label>Seconds</label>
                     <input type="number" class="settings-input" id="set-sec"
                     min="0" max="59" value="0">
                 </div>
             </div>
             <div class="save-timer-container">
                 <button id="save-timer-btn">Save</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Profile bar slider -->
-    <div class="profile-bar">
-        <div class="profile">
-            <span id="close-profile-button" class="close-profile">
-                <i class="fa fa-times"></i>
-            </span>
-            <div class="profile-container">
-                <div class="profile-titlebox">
-                    <h2 class="profile-title">Profile</h2>
-                </div>
-            </div>
-            <div class="profile-content"></div>
-            <div class="profile-inputs">
-                <p>Username: </p>
-                <input type="text" class="profile-user">
-                <p>Password: </p>
-                <input type="password" class="profile-pass">
-            </div>
-            <div class="login-container">
-                <button class="login-btn">Login</button>
             </div>
         </div>
     </div>
