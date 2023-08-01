@@ -9,7 +9,7 @@ const timerDisplay = {
 // opens the settings menu
 document.addEventListener("DOMContentLoaded", function() {
     const settingsButton = document.getElementById("settings-button");
-    const settings = document.querySelector(".settings"); 
+    const settings = document.querySelector(".settings-bar"); 
     const closeSettingsButton = document.getElementById("close-settings-button");
 
     settingsButton.addEventListener("click", function() {
