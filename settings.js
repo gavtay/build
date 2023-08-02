@@ -57,4 +57,53 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
+// When slider buttons are pressed, change background color, make input visible
+document.addEventListener('DOMContentLoaded', () => {
+    let waterBtnStatus = false;
+    let postureBtnStatus = false;
+    const waterBtn = document.getElementById('water-btn');
+    const postureBtn = document.getElementById('posture-btn');
+    const waterInput = document.getElementById('water-input');
+    const postureInput = document.getElementById('posture-input'); 
 
+    waterBtn.addEventListener('click', updateWaterBtn);
+    postureBtn.addEventListener('click', updatePostureBtn);
+
+    // Water button
+    function updateWaterBtn() {
+        if (waterBtnStatus == false) {
+            waterBtnStatus = true;
+            waterBtn.style.backgroundPosition = "left";
+            waterBtn.style.color = "#fff";
+            waterInput.style.visibility = "visible";
+            return;
+        }
+        else {
+            waterBtnStatus = false;
+            waterBtn.style.backgroundPosition = "right";
+            waterBtn.style.color = "#000";
+            waterInput.style.visibility = "hidden";
+            return;
+        }
+    }
+
+    // Posture button
+    function updatePostureBtn() {
+        if (postureBtnStatus == false) {
+            postureBtnStatus = true;
+            postureBtn.style.backgroundPosition = "left";
+            postureBtn.style.color = "#fff";
+            postureInput.style.visibility = "visible";
+            return;
+        }
+        else {
+            postureBtnStatus = false;
+            postureBtn.style.backgroundPosition = "right";
+            postureBtn.style.color = "#000";
+            postureInput.style.visibility = "hidden";
+            return;
+        }
+    }
+
+
+});
