@@ -42,7 +42,7 @@
             <div class="settings-content"></div>
             <!-- clock icon -->
             <div class="clock-container">
-                <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+                <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>
             </div>
             <div class="input-container">
                 <div id="hours-input" style="margin: 10px;">
@@ -62,16 +62,19 @@
                 </div>
             </div>
             <!-- water icon -->
-            <div class="water-container">
-                <i class="fa-solid fa-bottle-water"></i>
+            <div class="water-posture-icons">
+                <i class="fa fa-tint fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
             </div>
-            <div>
-                <label>Water</label>
-                <button>slider</button>
-                <label>Posture</label>
-                <button>slider</button>
-                <input type="number">
-                <input type="number">
+            <div class="water-posture-cont">
+                <div class="water-posture-containers">
+                    <button class="water-posture-buttons" id="water-btn">Water</button>
+                    <button class="water-posture-buttons" id="posture-btn">Posture</button>
+                </div>
+                <div class="wat-post-inp-cont">
+                    <input type="number" class="water-posture-inputs" id="water-input" placeholder="Minutes">
+                    <input type="number" class="water-posture-inputs" id="posture-input" placeholder="Minutes">
+                </div>
             </div>
             <div class="save-timer-container">
                 <button id="save-timer-btn">Save</button>
@@ -88,9 +91,6 @@
                 <span id="sec-display">00</span>
             </div>
             <div class="play-button-box">
-                <!-- Create JS file to change the text from start -->
-                <!-- to stop when pressed and timer going -->
-                <!-- use conditional? -->
                 <button id="start-stop-button">START</button>
                 <button id="reset-button">RESET</button>
             </div>
