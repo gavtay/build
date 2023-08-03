@@ -158,8 +158,8 @@ img {
     transition: .5s ease-out;
 }
 .water-posture-buttons:hover {
-    background-position: left;
-    color: #fff;
+    background-position: left!important;
+    color: #fff!important;
 }
 .wat-post-inp-cont {
     width: 100%;
