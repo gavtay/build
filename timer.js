@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    // Decrement time function
+    // Decrement time function, alert user when timer is through
     function updateTimer() {
         const hrDisplayValue = document.getElementById('hr-display');
         const minDisplayValue = document.getElementById('min-display');
@@ -47,7 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
             clearInterval(intervalId);
             startStopStatus.textContent = 'START';
             isRunning = false;
-            alert('Timer has ended!');
+
+            // plays audio when timer appears for 10 seconds, pauses when ok is pressed
+            var audioElement = document.getElementById('timer-audio');
+            audioElement.play();
+            
+            if (confirm('Break time!')) {
+                document.getElementById('timer-audio').pause();
+            }
+
         } 
         else { 
             // else decrement timer
