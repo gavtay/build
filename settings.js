@@ -107,3 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
+// Create an alert that notifies the user when their
+// timer is up for the water or posture reminder
+
