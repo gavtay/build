@@ -1,4 +1,6 @@
 // settings.js
+// saving the desired input time for the timer
+// saving settings for water and posture reminders
 // global variable for timer display
 const timerDisplay = {
     hrDisplay: document.getElementById('hr-display'),
@@ -6,12 +8,33 @@ const timerDisplay = {
     secDisplay: document.getElementById('sec-display'),
 };
 
-// opens the settings menu
-document.addEventListener("DOMContentLoaded", function() {
+
+
+document.addEventListener('DOMContentLoaded', () => {
     const settingsButton = document.getElementById("settings-button");
     const settings = document.querySelector(".settings-bar"); 
     const closeSettingsButton = document.getElementById("close-settings-button");
+    const waterBtn = document.getElementById('water-btn');
+    const postureBtn = document.getElementById('posture-btn');
+    const waterInput = document.getElementById('water-input');
+    const postureInput = document.getElementById('posture-input'); 
+    let waterBtnStatus = false;
+    let postureBtnStatus = false;
+    // desired time input from user
+    const hrInput = document.getElementById("set-hr");
+    const minInput = document.getElementById("set-min");
+    const secInput = document.getElementById("set-sec");
+    // current time displayed on timer
+    const hrDisplay = document.getElementById("hr-display");
+    const minDisplay = document.getElementById("min-display");
+    const secDisplay = document.getElementById("sec-display");
+    const saveTimerBtn = document.getElementById("save-timer-btn");
 
+
+
+
+
+    // show / hide settings menu
     settingsButton.addEventListener("click", function() {
         settings.classList.toggle("show-settings");
     });
@@ -20,52 +43,11 @@ document.addEventListener("DOMContentLoaded", function() {
         settings.classList.remove("show-settings");
     });
 
-});
 
-// When a time change is made in the settings menu
-// And save is pressed, push the time change to the main screen
-document.addEventListener('DOMContentLoaded', () => {
-    // desired time input from user
-    const hrInput = document.getElementById("set-hr");
-    const minInput = document.getElementById("set-min");
-    const secInput = document.getElementById("set-sec");
 
-    // current time displayed on timer
-    const hrDisplay = document.getElementById("hr-display");
-    const minDisplay = document.getElementById("min-display");
-    const secDisplay = document.getElementById("sec-display");
 
-    const saveTimerBtn = document.getElementById("save-timer-btn");
-    saveTimerBtn.addEventListener('click', updateClock);
 
-    // update the timer to display what user inputted
-    function updateClock() {
-        const hrs = hrInput.value || 0;
-        const min = minInput.value || 0;
-        const sec = secInput.value || 0;
-
-        const formattedHrs = hrs.toString().padStart(2, '0');
-        const formattedMin = min.toString().padStart(2, '0');
-        const formattedSec = sec.toString().padStart(2, '0');
-
-        hrDisplay.textContent = formattedHrs;
-        minDisplay.textContent = formattedMin;
-        secDisplay.textContent = formattedSec;
-    }
-
-    updateClock();
-    
-});
-
-// When slider buttons are pressed, change background color, make input visible
-document.addEventListener('DOMContentLoaded', () => {
-    let waterBtnStatus = false;
-    let postureBtnStatus = false;
-    const waterBtn = document.getElementById('water-btn');
-    const postureBtn = document.getElementById('posture-btn');
-    const waterInput = document.getElementById('water-input');
-    const postureInput = document.getElementById('posture-input'); 
-
+    // water and posture buttons
     waterBtn.addEventListener('click', updateWaterBtn);
     postureBtn.addEventListener('click', updatePostureBtn);
 
@@ -76,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             waterBtn.style.backgroundPosition = "left";
             waterBtn.style.color = "#fff";
             waterInput.style.visibility = "visible";
+            waterNotif();
             return;
         }
         else {
@@ -94,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             postureBtn.style.backgroundPosition = "left";
             postureBtn.style.color = "#fff";
             postureInput.style.visibility = "visible";
+            postureNotif();
             return;
         }
         else {
@@ -106,8 +90,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+
+
+    
+    //Water notification implementation
+    function waterNotif() {
+        let intervalId = setInterval(checkWaterNotif, 1000);
+
+        function checkWaterNotif() {
+            let watInput = parseInt(waterInput.value);
+            let gap = parseInt(minDisplay.textContent);
+            let remainingMinutes = parseInt(minDisplay.textContent) - watInput;
+
+            if (secDisplay.textContent === '00' && remainingMinutes === 0) {
+                console.log('drink water');
+            }
+
+            // clear interval when timer hits 0
+            if (hrDisplay.textContent == '00' && minDisplay.textContent == '00' && secDisplay.textContent == '00') {
+                clearInterval(intervalId);
+            }
+
+        }
+
+    }
+
+
+
+
+
+
+    // update the timer to display user input
+    saveTimerBtn.addEventListener('click', () => {
+        updateClock();
+
+        if (parseInt(waterInput.value) > parseInt(minInput.value)) {
+            alert("Insert valid water break increment.");
+        }
+        
+    });
+
+    function updateClock() {
+        const hrs = hrInput.value || 0;
+        const min = minInput.value || 0;
+        const sec = secInput.value || 0;
+
+        const formattedHrs = hrs.toString().padStart(2, '0');
+        const formattedMin = min.toString().padStart(2, '0');
+        const formattedSec = sec.toString().padStart(2, '0');
+
+        hrDisplay.textContent = formattedHrs;
+        minDisplay.textContent = formattedMin;
+        secDisplay.textContent = formattedSec;
+    }
+    updateClock();
+
+
 });
 
-// Create an alert that notifies the user when their
-// timer is up for the water or posture reminder
+
+
 

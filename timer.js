@@ -1,3 +1,4 @@
+// timer.js
 // Changing the start / stop button status which tracks if timer is
 // running or not
 document.addEventListener('DOMContentLoaded', function() {
@@ -30,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
     // Decrement time function, alert user when timer is through
     function updateTimer() {
         const hrDisplayValue = document.getElementById('hr-display');
@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (hours === 0 && minutes === 0 && seconds === 0) {
             // If timer is at 0, change pause button to start, set
-            // running status to false, clear interval
             clearInterval(intervalId);
             startStopStatus.textContent = 'START';
             isRunning = false;
@@ -55,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (confirm('Break time!')) {
                 document.getElementById('timer-audio').pause();
             }
-
         } 
         else { 
             // else decrement timer
@@ -83,6 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
         minDisplayValue.textContent = formattedMinutes;
         secDisplayValue.textContent = formattedSeconds;
     }
+
+
 
 
 
