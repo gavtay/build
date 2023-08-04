@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
     // Decrement time function, alert user when timer is through
     function updateTimer() {
         const hrDisplayValue = document.getElementById('hr-display');
@@ -80,6 +81,46 @@ document.addEventListener('DOMContentLoaded', function() {
         hrDisplayValue.textContent = formattedHours;
         minDisplayValue.textContent = formattedMinutes;
         secDisplayValue.textContent = formattedSeconds;
+
+
+
+
+
+        // water and posture notification implementation
+        const waterInput = document.getElementById('water-input');
+        const postureInput = document.getElementById('posture-input');
+        const hrDisplay = document.getElementById("hr-display");
+        const minDisplay = document.getElementById("min-display");
+        const secDisplay = document.getElementById("sec-display");
+
+        // water notif
+        let watInput = parseInt(waterInput.value);
+        let remainingWaterMinutes = parseInt(minDisplay.textContent) - watInput;
+
+        if (secDisplay.textContent === '00' && remainingWaterMinutes === 0) {
+            // make element visible to show drink water for x seconds
+            document.getElementById('noti-audio').play();
+        }
+
+        // clear interval when timer hits 0
+        if (hrDisplay.textContent == '00' && minDisplay.textContent == '00' && secDisplay.textContent == '00') {
+            clearInterval(intervalId);
+        }
+
+        // posture notif
+        let posInput = parseInt(postureInput.value);
+        let remainingPostureMinutes = parseInt(minDisplay.textContent) - posInput;
+
+        if (secDisplay.textContent === '00' && remainingPostureMinutes === 0) {
+            // make element visible to show sit up for x seconds
+            document.getElementById('noti-audio').play();
+        }
+
+        // clear interval when timer hits 0
+        if (hrDisplay.textContent == '00' && minDisplay.textContent == '00' && secDisplay.textContent == '00') {
+            clearInterval(intervalId);
+        }
+
     }
 
 

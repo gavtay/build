@@ -48,44 +48,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // water and posture buttons
-    waterBtn.addEventListener('click', updateWaterBtn);
-    postureBtn.addEventListener('click', updatePostureBtn);
+    waterBtn.addEventListener('click', () => updateReminderBtns(waterBtn, waterInput));
+    postureBtn.addEventListener('click', () => updateReminderBtns(postureBtn, postureInput));
 
-    // Water button
-    function updateWaterBtn() {
-        if (waterBtnStatus == false) {
-            waterBtnStatus = true;
-            waterBtn.style.backgroundPosition = "left";
-            waterBtn.style.color = "#fff";
-            waterInput.style.visibility = "visible";
-            waterNotif();
-            return;
-        }
-        else {
-            waterBtnStatus = false;
-            waterBtn.style.backgroundPosition = "right";
-            waterBtn.style.color = "#000";
-            waterInput.style.visibility = "hidden";
-            return;
-        }
-    }
+    function updateReminderBtns(btn, input) {
+        const isVisible = btn.classList.contains('active');
 
-    // Posture button
-    function updatePostureBtn() {
-        if (postureBtnStatus == false) {
-            postureBtnStatus = true;
-            postureBtn.style.backgroundPosition = "left";
-            postureBtn.style.color = "#fff";
-            postureInput.style.visibility = "visible";
-            postureNotif();
-            return;
-        }
+        if (isVisible) {
+            btn.classList.remove('active');
+            btn.style.backgroundPosition = "right";
+            btn.style.color = "#000";
+            input.style.visibility = "hidden";
+        } 
         else {
-            postureBtnStatus = false;
-            postureBtn.style.backgroundPosition = "right";
-            postureBtn.style.color = "#000";
-            postureInput.style.visibility = "hidden";
-            return;
+            btn.classList.add('active');
+            btn.style.backgroundPosition = "left";
+            btn.style.color = "#fff";
+            input.style.visibility = "visible";
         }
     }
 
@@ -93,33 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     
-    //Water notification implementation
-    function waterNotif() {
-        let intervalId = setInterval(checkWaterNotif, 1000);
-
-        function checkWaterNotif() {
-            let watInput = parseInt(waterInput.value);
-            let gap = parseInt(minDisplay.textContent);
-            let remainingMinutes = parseInt(minDisplay.textContent) - watInput;
-
-            if (secDisplay.textContent === '00' && remainingMinutes === 0) {
-                console.log('drink water');
-            }
-
-            // clear interval when timer hits 0
-            if (hrDisplay.textContent == '00' && minDisplay.textContent == '00' && secDisplay.textContent == '00') {
-                clearInterval(intervalId);
-            }
-
-        }
-
-    }
-
-
-
-
-
-
     // update the timer to display user input
     saveTimerBtn.addEventListener('click', () => {
         updateClock();
