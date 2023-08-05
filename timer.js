@@ -2,16 +2,21 @@
 // Changing the start / stop button status which tracks if timer is
 // running or not
 document.addEventListener('DOMContentLoaded', function() {
+    const hrDisplayValue = document.getElementById('hr-display');
+    const minDisplayValue = document.getElementById('min-display');
+    const secDisplayValue = document.getElementById('sec-display');
+
     const startStopStatus = document.querySelector('#start-stop-button');
     startStopStatus.addEventListener('click', toggleTimer);
 
     // default is running to false
     let isRunning = false;
     let intervalId;
+    let intervalId2;
 
     function toggleTimer() {
         // timer is default on pause
-
+        
         // if the timer is running and STOP button is pressed change
         // text content to start since timer was paused
         if (isRunning) {
@@ -21,7 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // if the timer is not running and the START button is
             // pressed then change text content to STOP since timer
             // was started
-            intervalId = setInterval(updateTimer, 1000);
+            intervalId = setInterval(function() {
+                updateTimer();
+                reminderNotif();
+            }, 1000);
             startStopStatus.textContent = 'STOP';
         } 
 
@@ -34,14 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Decrement time function, alert user when timer is through
     function updateTimer() {
-        const hrDisplayValue = document.getElementById('hr-display');
-        const minDisplayValue = document.getElementById('min-display');
-        const secDisplayValue = document.getElementById('sec-display');
-
         let hours = parseInt(hrDisplayValue.textContent);
         let minutes = parseInt(minDisplayValue.textContent);
         let seconds = parseInt(secDisplayValue.textContent);
-
         if (hours === 0 && minutes === 0 && seconds === 0) {
             // If timer is at 0, change pause button to start, set
             clearInterval(intervalId);
@@ -70,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 minutes = 59;
                 seconds = 59;
             }
+
         }
 
         // format integer values of time to strings
@@ -82,44 +86,47 @@ document.addEventListener('DOMContentLoaded', function() {
         minDisplayValue.textContent = formattedMinutes;
         secDisplayValue.textContent = formattedSeconds;
 
+    }
 
 
 
 
+    function reminderNotif() {
         // water and posture notification implementation
+        let hours = parseInt(hrDisplayValue.textContent);
+        let minutes = parseInt(minDisplayValue.textContent);
+        let seconds = parseInt(secDisplayValue.textContent);
         const waterInput = document.getElementById('water-input');
         const postureInput = document.getElementById('posture-input');
-        const hrDisplay = document.getElementById("hr-display");
-        const minDisplay = document.getElementById("min-display");
-        const secDisplay = document.getElementById("sec-display");
 
         // water notif
         let watInput = parseInt(waterInput.value);
-        let remainingWaterMinutes = parseInt(minDisplay.textContent) - watInput;
+        let remainingWaterMinutes = minutes - watInput;
 
-        if (secDisplay.textContent === '00' && remainingWaterMinutes === 0) {
+        if (seconds == 0 && remainingWaterMinutes === 0) {
             // make element visible to show drink water for x seconds
             document.getElementById('noti-audio').play();
         }
 
         // clear interval when timer hits 0
-        if (hrDisplay.textContent == '00' && minDisplay.textContent == '00' && secDisplay.textContent == '00') {
-            clearInterval(intervalId);
+        if (hours === 0 && minutes === 0 && seconds === 0) {
+            clearInterval(intervalId2);
         }
 
         // posture notif
         let posInput = parseInt(postureInput.value);
-        let remainingPostureMinutes = parseInt(minDisplay.textContent) - posInput;
+        let remainingPostureMinutes = minutes - posInput;
 
-        if (secDisplay.textContent === '00' && remainingPostureMinutes === 0) {
+        if (seconds === 0 && remainingPostureMinutes === 0) {
             // make element visible to show sit up for x seconds
             document.getElementById('noti-audio').play();
         }
 
         // clear interval when timer hits 0
-        if (hrDisplay.textContent == '00' && minDisplay.textContent == '00' && secDisplay.textContent == '00') {
-            clearInterval(intervalId);
+        if (hours === 0 && minutes === 0 && seconds === 0) {
+            clearInterval(intervalId2);
         }
+
 
     }
 
