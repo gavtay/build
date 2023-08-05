@@ -25,11 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // if the timer is not running and the START button is
             // pressed then change text content to STOP since timer
             // was started
-            let totalElapsedSeconds = ((parseInt(hrDisplayValue.textContent) * 60 * 60) + parseInt(minDisplayValue.textContent)) * 60 + parseInt(secDisplayValue.textContent);
             intervalId = setInterval(function() {
                 updateTimer();
-                reminderNotif(totalElapsedSeconds);
-                totalElapsedSeconds++;
+                reminderNotif();
             }, 1000);
             startStopStatus.textContent = 'STOP';
         } 
@@ -92,27 +90,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-    function reminderNotif(totalElapsedSeconds) {
-        // water and posture notification implementation
+    // water and posture reminder function
+    function reminderNotif() {
         const waterInput = document.getElementById('water-input');
-        const postureInput = document.getElementById('posture-input');
-    
-        // Get the specified notification intervals (in seconds)
-        let waterIntervalSeconds = parseInt(waterInput.value) * 60;
-        let postureIntervalSeconds = parseInt(postureInput.value) * 60;
+        // const postureInput = document.getElementById('posture-input');
+        let timerMin = parseInt(minDisplayValue.value);
+        // let postureGap = parseInt(minDisplayValue.value) - postureInput;
     
         // Check if it's time for water notification
-        if (totalElapsedSeconds > 0 && totalElapsedSeconds % waterIntervalSeconds === 0) {
+        if (parseInt(hrDisplayValue.textContent) === 0 && timerMin === 0 && parseInt(secDisplayValue.textContent) === 0) {
             // make element visible to show drink water for x seconds
-            document.getElementById('noti-audio').play();
+            return;
+        }
+        else {
+            if (timerMin > 0 && waterInput > 0 && timerMin % waterInput === 0) {
+                document.getElementById('noti-audio').play();
+            }
         }
     
         // Check if it's time for posture notification
-        if (totalElapsedSeconds > 0 && totalElapsedSeconds % postureIntervalSeconds === 0) {
-            // make element visible to show sit up for x seconds
-            document.getElementById('noti-audio').play();
-        }
+        // if () {
+        //     // make element visible to show sit up for x seconds
+        //     document.getElementById('noti-audio').play();
+        // }
     }   
     
      
@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // grab the inputs in settings and id's of clock
         const setHr = document.getElementById('set-hr');
         const setMin = document.getElementById('set-min');
-        const setSec = document.getElementById('set-sec');
         const hrDisplayVal = document.getElementById('hr-display');
         const minDisplayVal = document.getElementById('min-display');
         const secDisplayVal = document.getElementById('sec-display');
@@ -135,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // get value of each input or set to '00'
         const formattedHrs = setHr.value || '00';
         const formattedMin = setMin.value || '00';
-        const formattedSec = setSec.value || '00';
+        const formattedSec = '00';
 
         // Reset timer to inputted time with proper pad formatting
         hrDisplayVal.textContent = formattedHrs.padStart(2, '0');

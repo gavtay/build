@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const postureBtn = document.getElementById('posture-btn');
     const waterInput = document.getElementById('water-input');
     const postureInput = document.getElementById('posture-input'); 
-    let waterBtnStatus = false;
-    let postureBtnStatus = false;
     // desired time input from user
     const hrInput = document.getElementById("set-hr");
     const minInput = document.getElementById("set-min");
@@ -85,16 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateClock() {
         const hrs = hrInput.value || 0;
         const min = minInput.value || 0;
-        const sec = secInput.value || 0;
 
         const formattedHrs = hrs.toString().padStart(2, '0');
         const formattedMin = min.toString().padStart(2, '0');
-        const formattedSec = sec.toString().padStart(2, '0');
 
         hrDisplay.textContent = formattedHrs;
         minDisplay.textContent = formattedMin;
-        secDisplay.textContent = formattedSec;
     }
+    
     updateClock();
 
 

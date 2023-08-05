@@ -10,7 +10,7 @@
     <script src="../study-buddy/profile.js"></script>
     <script src="../study-buddy/settings.js"></script>
     <script src="../study-buddy/timer.js"></script>
-    <audio id="timer-audio" src="../study-buddy/audio/timer-audio.mp3" preload="auto" loop="loop"></audio>
+    <audio id="timer-audio" src="../study-buddy/audio/timer-audio.mp3" preload="auto"></audio>
     <audio id="noti-audio" src="../study-buddy/audio/noti-audio.wav" preload="auto"></audio>
     <title>Stubu - The Study Buddy</title>
 </head>
@@ -48,20 +48,15 @@
             </div>
             <div class="input-container">
                 <div id="hours-input" style="margin: 10px;">
-                    <label class="input-label">Hours</label>
+                    <label class="input-label">Hour: </label>
                     <input type="number" class="settings-input" id="set-hr"
                     min="0" max="23" value="0">
                 </div>               
                 <div id="minutes-input" style="margin: 10px;">
-                    <label class="input-label">Minutes</label>
+                    <label class="input-label">Minute: </label>
                     <input type="number" class="settings-input" id="set-min"
                     min="0" max="59" value="0">
                 </div>     
-                <div id="seconds-input" style="margin: 10px;">
-                    <label class="input-label">Seconds</label>
-                    <input type="number" class="settings-input" id="set-sec"
-                    min="0" max="59" value="0">
-                </div>
             </div>
             <!-- water icon -->
             <div class="water-posture-icons">

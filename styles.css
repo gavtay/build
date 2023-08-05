@@ -116,7 +116,7 @@ img {
     font-weight: 500;
 }
 .input-container {
-    margin-top: 15px;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
 }
@@ -131,7 +131,7 @@ img {
 }
 .settings-input {
     height: 20px;
-    width: 75px;
+    width: 40%;
     border: 1px solid #000;
     border-radius: 5px;
 }
@@ -139,17 +139,19 @@ img {
     transform: translateX(0);
 }
 .water-posture-icons {
-    height: 4em;
+    height: 3em;
     width: 100%;
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
 }
 .water-posture-containers {
+    margin-top: 10px;
     margin-bottom: 5px;
     display: flex;
     justify-content: space-around;
 }
+
 /* Water and posture buttons with gradient change and controls input visibility */
 .water-posture-buttons {
     height: 2em;
