@@ -138,49 +138,6 @@ img {
 .settings-bar.show-settings {
     transform: translateX(0);
 }
-.water-posture-icons {
-    height: 3em;
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-}
-.water-posture-containers {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-around;
-}
-
-/* Water and posture buttons with gradient change and controls input visibility */
-.water-posture-buttons {
-    height: 2em;
-    width: 25%;
-    border: 1px solid #000;
-    border-radius: 15px;
-    background: linear-gradient(to left, #fff 50%, #766dc1 50%) right;
-    background-size: 200%;
-    transition: .5s ease-out;
-}
-.water-posture-buttons:hover {
-    background-position: left!important;
-    color: #fff!important;
-}
-.wat-post-inp-cont {
-    width: 100%;
-    height: 28px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-around;
-}
-.water-posture-inputs {
-    height: 20px;
-    width: 35%;
-    border: 1px solid #000;
-    border-radius: 5px;
-    visibility: hidden;
-}
-
 .save-timer-container {
     display: flex;
     flex: wrap;

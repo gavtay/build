@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             startStopStatus.textContent = 'START';
             isRunning = false;
 
-            // plays audio when timer appears for 10 seconds, pauses when ok is pressed
+            // plays audio, pauses when ok is pressed
             var audioElement = document.getElementById('timer-audio');
             audioElement.play();
             
@@ -87,36 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-
-
-
-    // water and posture reminder function
-    function reminderNotif() {
-        const waterInput = document.getElementById('water-input');
-        // const postureInput = document.getElementById('posture-input');
-        let timerMin = parseInt(minDisplayValue.value);
-        // let postureGap = parseInt(minDisplayValue.value) - postureInput;
-    
-        // Check if it's time for water notification
-        if (parseInt(hrDisplayValue.textContent) === 0 && timerMin === 0 && parseInt(secDisplayValue.textContent) === 0) {
-            // make element visible to show drink water for x seconds
-            return;
-        }
-        else {
-            if (timerMin > 0 && waterInput > 0 && timerMin % waterInput === 0) {
-                document.getElementById('noti-audio').play();
-            }
-        }
-    
-        // Check if it's time for posture notification
-        // if () {
-        //     // make element visible to show sit up for x seconds
-        //     document.getElementById('noti-audio').play();
-        // }
-    }   
     
      
-
 
 
     // Reset timer, call the function when reset button is clicked
