@@ -122,9 +122,12 @@ img {
 }
 .input-label {
     font-size: large;
+    text-align: center;
 }
-#hours-input #minutes-input #seconds-input {
+#hours-input #minutes-input {
     margin: 15px;
+    display: flex;
+    justify-content: center;
 }
 .settings-input {
     height: 20px;

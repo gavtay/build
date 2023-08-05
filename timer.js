@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // default is running to false
     let isRunning = false;
-    let intervalId;
-    let intervalId2;
+    let intervalId, intervalId2, intervalId3;
 
     function toggleTimer() {
         // timer is default on pause
@@ -26,9 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // if the timer is not running and the START button is
             // pressed then change text content to STOP since timer
             // was started
+            let totalElapsedSeconds = ((parseInt(hrDisplayValue.textContent) * 60 * 60) + parseInt(minDisplayValue.textContent)) * 60 + parseInt(secDisplayValue.textContent);
             intervalId = setInterval(function() {
                 updateTimer();
-                reminderNotif();
+                reminderNotif(totalElapsedSeconds);
+                totalElapsedSeconds++;
             }, 1000);
             startStopStatus.textContent = 'STOP';
         } 
@@ -91,46 +92,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    function reminderNotif() {
+
+    function reminderNotif(totalElapsedSeconds) {
         // water and posture notification implementation
-        let hours = parseInt(hrDisplayValue.textContent);
-        let minutes = parseInt(minDisplayValue.textContent);
-        let seconds = parseInt(secDisplayValue.textContent);
         const waterInput = document.getElementById('water-input');
         const postureInput = document.getElementById('posture-input');
-
-        // water notif
-        let watInput = parseInt(waterInput.value);
-        let remainingWaterMinutes = minutes - watInput;
-
-        if (seconds == 0 && remainingWaterMinutes === 0) {
+    
+        // Get the specified notification intervals (in seconds)
+        let waterIntervalSeconds = parseInt(waterInput.value) * 60;
+        let postureIntervalSeconds = parseInt(postureInput.value) * 60;
+    
+        // Check if it's time for water notification
+        if (totalElapsedSeconds > 0 && totalElapsedSeconds % waterIntervalSeconds === 0) {
             // make element visible to show drink water for x seconds
             document.getElementById('noti-audio').play();
         }
-
-        // clear interval when timer hits 0
-        if (hours === 0 && minutes === 0 && seconds === 0) {
-            clearInterval(intervalId2);
-        }
-
-        // posture notif
-        let posInput = parseInt(postureInput.value);
-        let remainingPostureMinutes = minutes - posInput;
-
-        if (seconds === 0 && remainingPostureMinutes === 0) {
+    
+        // Check if it's time for posture notification
+        if (totalElapsedSeconds > 0 && totalElapsedSeconds % postureIntervalSeconds === 0) {
             // make element visible to show sit up for x seconds
             document.getElementById('noti-audio').play();
         }
-
-        // clear interval when timer hits 0
-        if (hours === 0 && minutes === 0 && seconds === 0) {
-            clearInterval(intervalId2);
-        }
-
-
-    }
-
-
+    }   
+    
+     
 
 
 
@@ -159,3 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
+
+
+
