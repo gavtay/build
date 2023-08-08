@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // default is running to false
     let isRunning = false;
-    let intervalId, intervalId2, intervalId3;
+    let intervalId;
 
     function toggleTimer() {
         // timer is default on pause
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // was started
             intervalId = setInterval(function() {
                 updateTimer();
-                reminderNotif();
             }, 1000);
+
             startStopStatus.textContent = 'STOP';
         } 
 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let hours = parseInt(hrDisplayValue.textContent);
         let minutes = parseInt(minDisplayValue.textContent);
         let seconds = parseInt(secDisplayValue.textContent);
-        if (hours === 0 && minutes === 0 && seconds === 0) {
+        if (hours == 0 && minutes == 0 && seconds == 0) {
             // If timer is at 0, change pause button to start, set
             clearInterval(intervalId);
             startStopStatus.textContent = 'START';
