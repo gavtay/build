@@ -1,6 +1,8 @@
 /* CSS for login.html */
 * {
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    cursor: default;
 }
 
 body {
@@ -15,13 +17,76 @@ body {
 }
 
 .box {
-    height: 75%;
-    width: 60%;
+    height: 50%;
+    width: 35em;
     margin: auto;
-    background-color: #000;
-    opacity: .6;
+    /* color and opacity */
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+form {
+    width: 100%;
+}
+
+.title-container {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+.title {
+    font-size: small;
+    padding-bottom: 20px;
+    color: #fff;
+}
+.title-description {
+    color: grey;
+}
+
+.user-container {
+    margin-bottom: 20px;
+    width: 100%;
+    display: grid; 
+    justify-content: center; 
+}
+.signin-input {
+    width: 35em;
+    height: 2.5em;
+    color: gray;
+    padding-left: 10px;
+    margin-top: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.rem-for-container {
+    width: 35em;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+#forgot-pass {
+    color: #4078c0;
+    cursor: pointer;
+}
+
+.login-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#login-btn {
+    width: 35em;
+    height: 3em;
+    margin-bottom: 20px;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#register {
+    text-align: center;
 }
