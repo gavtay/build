@@ -1,4 +1,4 @@
-# Study Buddy
+# Stubu - The Study Buddy
 
 Study Buddy is a web application designed to help you enhance your study sessions by providing a customizable timer and notification system. Whether you're preparing for an exam, working on assignments, or simply need structured study breaks, Study Buddy has you covered.
 
