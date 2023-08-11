@@ -1,9 +1,28 @@
 # Study Buddy
 
-This website will serve as a study buddy. It allows you to focus on your study material better.
+Study Buddy is a web application designed to help you enhance your study sessions by providing a customizable timer and notification system. Whether you're preparing for an exam, working on assignments, or simply need structured study breaks, Study Buddy has you covered.
 
-It will be similar to the pomodoro timer, and take up your screen. You will be able to change the color to whatever you want. It will have a timer option, pause button / start button. Change time / setting button.
+# Features
+- Customizable Timer: The main feature of Study Buddy is its user-friendly timer. You can set your desired study duration by specifying hours, minutes, and seconds. The timer can be started, paused, and reset at any time.
 
-The difference will be that you can include a posture reminder, and a water break reminder that will alert you every x amount of time.
+- Pause/Start and Reset Buttons: The timer interface includes intuitive buttons to control your study sessions. The "Pause/Start" button lets you toggle between pausing and resuming the timer. The "Reset" button allows you to reset the timer back to your chosen study duration.
 
-The site will be made with HTML, CSS and JS. The backend will either be made with Java and Spring, or with JS. I will decide on the backend at another time. I do not plan to use a frontend framework so that I can get the foundations of HTML CSS and JS down better. 
+- Settings Menu: The settings button, located at the top right corner of the page, opens a settings menu. This menu enables you to customize the timer's countdown duration, making it easy to adapt to your study needs.
+
+- User Login: Study Buddy also provides a user login feature, accessed through the login button. By logging in, you can enjoy personalized features, including saved timer preferences and study history tracking.
+
+# Usage
+Timer: To use the timer, simply input your desired study duration in hours, minutes, and seconds. Click the "Start" button to begin the countdown. You can pause the timer at any point using the "Pause" button, and resume it by clicking "Start" again. To reset the timer, click the "Reset" button.
+
+Settings: Click the settings button to open the settings menu. Here, you can fine-tune your study sessions by adjusting the timer duration according to your preferences. Once you've made your changes, click the "Save" button to apply them.
+
+Login: If you want to access advanced features and enjoy a personalized experience, click the login button to navigate to the login page. By logging in or creating an account, you can save timer settings, view study history, and more.
+
+# Technologies Used
+Study Buddy was developed using the following technologies:
+
+- HTML: The structure and layout of the webpage were created using HTML.
+
+- CSS: The visual styling and design of the webpage were achieved with CSS.
+
+- JavaScript: The timer functionality, settings menu, and user interactions were implemented using JavaScript.

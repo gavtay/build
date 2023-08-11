@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const settingsButton = document.getElementById("settings-button");
     const settings = document.querySelector(".settings-bar"); 
     const closeSettingsButton = document.getElementById("close-settings-button");
-    const waterInput = document.getElementById('water-input');
     // desired time input from user
     const hrInput = document.getElementById("set-hr");
     const minInput = document.getElementById("set-min");
@@ -43,11 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // update the timer to display user input
     saveTimerBtn.addEventListener('click', () => {
         updateClock();
-
-        if (parseInt(waterInput.value) > parseInt(minInput.value)) {
-            alert("Insert valid water break increment.");
-        }
-        
     });
 
     function updateClock() {
@@ -62,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     updateClock();
-
 
 });
 

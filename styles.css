@@ -1,7 +1,7 @@
-/* @font-face {
+@font-face {
     font-family: 'Montserrat';
-    src: url('path-to-font/Montserrat-Regular.ttf') format('truetype');
-} */
+    src: url('../study-buddy/montserrat/Montserrat-Regular.ttf') format('truetype');
+}
 * {
     margin: 0;
 }

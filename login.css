@@ -41,7 +41,7 @@ form {
     color: #fff;
 }
 .title-description {
-    color: grey;
+    color: rgb(141, 141, 141);
 }
 
 .user-container {
@@ -53,6 +53,7 @@ form {
 .signin-input {
     width: 35em;
     height: 2.5em;
+    font-weight: 500;
     color: gray;
     padding-left: 10px;
     margin-top: 10px;

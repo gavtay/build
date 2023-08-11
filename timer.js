@@ -49,14 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
             clearInterval(intervalId);
             startStopStatus.textContent = 'START';
             isRunning = false;
-
-            // plays audio, pauses when ok is pressed
-            var audioElement = document.getElementById('timer-audio');
-            audioElement.play();
-            
-            if (confirm('Break time!')) {
-                document.getElementById('timer-audio').pause();
-            }
         } 
         else { 
             // else decrement timer
