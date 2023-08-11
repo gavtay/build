@@ -26,10 +26,14 @@ body {
     display: flex;
     justify-content: center;
 }
+@media screen and (max-width: 650px) {
+    .box {
+        width: 85%;
+    }
+}
 form {
     width: 100%;
 }
-
 .title-container {
     margin-top: 2em;
     margin-bottom: 2em;
@@ -59,6 +63,7 @@ form {
     margin-top: 10px;
     border: 1px solid #000;
     border-radius: 5px;
+    transition: width 0.5s ease;
 }
 
 .rem-for-container {
@@ -67,6 +72,7 @@ form {
     display: flex;
     justify-content: space-around;
 }
+
 #forgot-pass {
     color: #4078c0;
     cursor: pointer;
@@ -87,7 +93,22 @@ form {
     border-radius: 5px;
     cursor: pointer;
 }
-
+@media screen and (max-width: 650px) {
+    .signin-input, .rem-for-container {
+        width: 21em;
+    }
+    .rem-for-container {
+        width: 100%;
+    }
+    #login-btn {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 350px){
+    .signin-input {
+        width: 13em;
+    }
+}
 #register {
     text-align: center;
 }
