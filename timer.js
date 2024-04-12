@@ -1,4 +1,3 @@
-// timer.js
 // Changing the start / stop button status which tracks if timer is
 // running or not
 document.addEventListener('DOMContentLoaded', function() {

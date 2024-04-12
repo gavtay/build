@@ -4,11 +4,11 @@
 }
 * {
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
     background-color: #ececec;
-    font-family: 'Montserrat', sans-serif;
 }
 .head-banner {
     width: 100%;
@@ -19,12 +19,10 @@ header {
     height: 60px;
     width: 55%;
     display: flex;
-    /* allows for wrapping when screen is narrow */
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
-    /* border-bottom: 2px solid #000000; */
 }
 #header-logo {
     font-weight: 400;
@@ -37,7 +35,6 @@ img {
     display: flex;
 }
 .nav-button {
-    font-family: 'Montserrat';
     font-size: 1em;
     font-weight: 400;
     background-color: transparent;
@@ -80,7 +77,6 @@ img {
     padding: 1em;
     cursor: pointer;
 }
-/* x icon */
 .fa-times {
     margin-top: 0.5em;
 }
@@ -93,7 +89,6 @@ img {
     align-items: center;
 }
 .settings-title {
-    font-family: 'Montserrat';
     font-size: 2em;
     font-weight: 500;
     text-align: center;
@@ -101,7 +96,7 @@ img {
     margin-bottom: 1em;
     border-bottom: 2px solid #766dc1;
 }
-/* clock icon */
+
 .clock-container {
     display: flex;
     justify-content: center;
@@ -144,7 +139,6 @@ img {
 }
 #save-timer-btn {
     margin-top: 2.5em;
-    font-family: 'Montserrat';
     font-size: 1.5em;
     font-weight: 500;
     background-color: #d2d2d2;
@@ -159,7 +153,6 @@ img {
 .nav-link {
     color: #000;
 }
-/* Responsiveness for header */
 @media screen and (max-width: 768px) {
     #header-logo {
         margin-left: 0;
@@ -179,11 +172,9 @@ img {
 
 
 
-/* main {
-} */
+/* main */
 .section-one {
     position: absolute;
-    /* This centers the box */
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -191,12 +182,10 @@ img {
     width: 450px;
     min-width: 250px;
     display: flex;
-    /* This puts them on top of eachother */
     flex-direction: column;
     flex: wrap;
     align-items: center;
 }
-/* This adds responsiveness to timer box */
 @media screen and (max-width: 768px) {
     .section-one {
         width: 80%;
@@ -231,7 +220,6 @@ img {
 #start-stop-button {
     height: 35px;
     width: 150px;
-    font-family: 'Montserrat';
     font-size: 2rem;
     background-color: #ececec;
     border: 2px solid transparent;
@@ -244,7 +232,6 @@ img {
 #reset-button {
     height: 35px;
     width: 150px;
-    font-family: 'Montserrat';
     font-size: 2rem;
     background-color: #ececec;
     border: 2px solid transparent;
